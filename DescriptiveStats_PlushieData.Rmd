@@ -41,10 +41,11 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 # We could directly create vectors for variables in our dataset.
 
 # Create a vector with all the data points for Gorilla 1; Name this vector gor1 .
+gor1<- c(37, 123, 20, 178, 21, 17.5, 6.5, 22)
 
 
 # Print gor1 in the Console below. Do you see the data you just entered?
-
+print(gor1)
 
 # When we get to large datasets, however, entering each datapoint into R manually is impractical and time-consuming (not to mention very annoying). Luckily, we can import whole datasets into R via our spreadsheets!
 # The best way to do this is to use a .csv (comma-separated values) file type, because R can easily read these.
@@ -59,10 +60,10 @@ bone.dat <- read.csv(file.choose())
 # Then I would press Enter and choose my .csv file from the pop-up window.
 
 # Your turn! Import the PlushieData.csv into R. Call this dataset plush.dat .
-
+plush.dat <- read.csv(file.choose())
 
 # Print plush.dat into the Console below. You should now see your data in the Console, and see plush.dat in the Environment tab to the right. How many variables do you see?
-
+print(plush.dat)
 
 
 # Now that we have our data in R, we can start to play with it.
@@ -73,47 +74,45 @@ bone.dat <- read.csv(file.choose())
 
 # Calculate the means for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 # For example:
+
 mean(plush.dat$Flexion)
 # Answer: 43.25 degrees
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+mean(plush.dat$Extension)
+# Answer: 138.25
+mean(plush.dat$Adduction)
+# Answer: 21.25
+mean(plush.dat$Abduction)
+# Answer: 178.75
+mean(plush.dat$PelvicBreadth)
+# Answer: 20.75
+mean(plush.dat$MidthighCircumference)
+# Answer: 17.75
+mean(plush.dat$ThighLength)
+# Answer: 7.875
+mean(plush.dat$DistanceBetweenKnees)
+# Answer: 25.75
 
 
 # Median: To calculate the median of a variable, we use the function median() .
 
 # Calculate the medians for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+median(plush.dat$Flexion)
+# Answer: 44
+median(plush.dat$Extension)
+# Answer: 137.5
+median(plush.dat$Adduction)
+# Answer: 20
+median(plush.dat$Abduction)
+# Answer: 178
+median(plush.dat$PelvicBreadth)
+# Answer: 21
+median(plush.dat$MidthighCircumference)
+# Answer: 17.75
+median(plush.dat$ThighLength)
+# Answer: 8
+median(plush.dat$DistanceBetweenKnees)
+# Answer: 26
 
 
 # Range: To calculate the range of a variable, we have to do a little bit more work. We use the min() and max() functions to calculate the minimum and maximum values in the dataset. Then, we subtract the min from the max.
@@ -124,7 +123,18 @@ range.flex <- max(plush.dat$Flexion) - min(plush.dat$Flexion)
 range.flex
 #Answer: 11 degrees
 
-
+range.extension <- max(plush.dat$Extension) - min(plush.dat$Extension)
+range.extension
+# Answer: 32
+range.adduction <- max(plush.dat$Adduction) - min(plush.dat$Adduction)
+range.adduction
+# Answer: 5
+range.abduction <- max(plush.dat$Abduction) - min (plush.dat$Abduction)
+range.abduction 
+# Answer: 3
+range.pelv <- max(plush.dat$PelvicBreadth) - min(plush.dat$PelvicBreadth)
+range.pelv
+# Answer: 1
 
 
 
