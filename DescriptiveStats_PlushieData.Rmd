@@ -119,10 +119,10 @@ median(plush.dat$DistanceBetweenKnees)
 
 # Calculate the ranges for 4 of the variables in plush.dat. Make sure to write down both your code and the answers below:
 # For example:
+
 range.flex <- max(plush.dat$Flexion) - min(plush.dat$Flexion)
 range.flex
 #Answer: 11 degrees
-
 range.extension <- max(plush.dat$Extension) - min(plush.dat$Extension)
 range.extension
 # Answer: 32
@@ -135,30 +135,36 @@ range.abduction
 range.pelv <- max(plush.dat$PelvicBreadth) - min(plush.dat$PelvicBreadth)
 range.pelv
 # Answer: 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+range.midthighcircum <- max(plush.dat$MidthighCircumference) - min(plush.dat$MidthighCircumference)
+range.midthighcircum
+# Answer: 0.5
+range.thighlen <- max(plush.dat$ThighLength) - min(plush.dat$ThighLength)
+range.thighlen
+# Answer: 2.5
+range.kneedistance <- max(plush.dat$DistanceBetweenKnees) - min(plush.dat$DistanceBetweenKnees)
+range.kneedistance
+# Answer: 7
 
 # Interquartile Range: To calculate the IQR of a variable, we use the function IQR() .
 
 # Calculate the IQR for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 
-
-
-
+IQR(plush.dat$Flexion)
+# Answer: 8.5
+IQR(plush.dat$Extension)
+# Answer: 29.75
+IQR(plush.dat$Adduction)
+# Answer: 1.25
+IQR(plush.dat$Abduction)
+# Answer: 0.75
+IQR(plush.dat$PelvicBreadth)
+# Answer: 0.25
+IQR(plush.dat$MidthighCircumference)
+# Answer: 0.5
+IQR(plush.dat$ThighLength)
+# Answer: 2.125
+IQR(plush.dat$DistanceBetweenKnees)
+# Answer: 6.25
 
 
 
