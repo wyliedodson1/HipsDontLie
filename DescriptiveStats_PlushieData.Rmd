@@ -150,7 +150,7 @@ range.kneedistance
 # Calculate the IQR for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 
 IQR(plush.dat$Flexion)
-# Answer: 8.5
+# Answer: 8.75
 IQR(plush.dat$Extension)
 # Answer: 29.75
 IQR(plush.dat$Adduction)
@@ -166,66 +166,50 @@ IQR(plush.dat$ThighLength)
 IQR(plush.dat$DistanceBetweenKnees)
 # Answer: 6.25
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Variance: To calculate the variance of a variable, we use the function var() .
 
 # Calculate the variances for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var(plush.dat$Extension)
+# Answer: 311.5833
+var(plush.dat$Flexion)
+# Answer: 31.58333
+var(plush.dat$Adduction)
+# Answer: 6.25
+var(plush.dat$Abduction)
+# Answer: 2.25
+var(plush.dat$PelvicBreadth)
+# Answer: 0.25
+var(plush.dat$MidthighCircumference)
+# Answer: 0.8333333
+var(plush.dat$ThighLength)
+# Answer: 1.729167
+var(plush.dat$DistanceBetweenKnees)
+# Answer: 14.25
 
 # Standard Deviation: To calculate the SD of a variable, we use the function sd() .
 
 # Calculate the SD for each of the 8 variables in plush.dat. Make sure to write down both your code and the answers below:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+sd(plush.dat$Extension)
+# Answer: 17.65172
+sd(plush.dat$Flexion)
+# Answer: 5.619905
+sd(plush.dat$Adduction)
+# Answer: 2.5
+sd(plush.dat$Abduction)
+# Answer: 1.5
+sd(plush.dat$PelvicBreadth)
+# Answer: 0.5
+sd(plush.dat$MidthighCircumference)
+# Answer: 0.2886751
+sd(plush.dat$ThighLength)
+# Answer: 1.314978
+sd(plush.dat$DistanceBetweenKnees)
+# Answer: 3.774917
 
 # Bonus:
 # Can you compile all the means for each variable into vectors?
-
 
 
 

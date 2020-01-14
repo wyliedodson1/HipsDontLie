@@ -1,0 +1,119 @@
+---
+title: "DescriptiveStats_PlushieData"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+# Remember:
+# For each question, make sure to type your answer into this R Markdown and save!
+# To run code that you have written in this R Markdown, highlight the code and click the "Run" button above or press command+return.
+# A # allows you to add in text that will not run as code.
+# Also remember: you can refer to the awesome Hips Don't Lie Cheat Sheet for help with R code! Thanks, Hanora!
+
+# Today, we will 1) continue practicing with R and R Stuido, and 2) calculate descriptive statistics with Ashley's real data from real primates.
+
+# First, we need to import the data into R Studio from a .csv file.
+# I have created three .csv files for you on GitHub for three different primate species. These are called AHData_InVivoROM_Papio.csv, AHData_InVivoROM_Pan.csv, and AHData_InVivoROM_Macaca.csv . Please use the .csv file that you have been assigned.
+# Remeber, to import a .csv file into R, we use the function read.csv() .
+# We need to tell R which file to import and where to find it. We will use a second funtion, file.choose(), which will show you a pop-up window where you can navigate to the .csv file on your computer (like in Finder).
+
+#For example, if I had a .csv file with data on primate bones that I wanted to import into R, I could type:
+bone.dat <- read.csv(file.choose())
+# Then I would press Enter and choose my .csv file from the pop-up window.
+
+# Your turn! Import the correct .csv into R using the code below. We're calling this dataset rom.dat. (*Ask me if you want to know why I included the "row.names = NULL" term.)
+rom.dat <- read.csv(file.choose(), row.names = NULL)
+
+
+# Print rom.dat into the Console below. You should now see your data in the Console, and see rom.dat in the Environment tab to the right. How many variables do you see?
+
+
+
+# In the last few classes before break, we learned about various descriptive statistics (like mean and standard deviation). Please review your notes and ask questions to remind yourself what these statistics are!
+
+# Mean: To calculate the mean (or average) of a variable, we use the funtion mean() . 
+# Remember: to select a single variable from a dataset, we use the $ symbol. For example, if I only want the data for Flexion, I write rom.dat$Flexion .
+
+# Calculate the means for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+# For example:
+mean(rom.dat$Flexion)
+# Answer: _ degrees
+
+
+
+
+# Median: To calculate the median of a variable, we use the function median() .
+
+# Calculate the medians for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+
+
+
+# Range: To calculate the range of a variable, we have to do a little bit more work. We use the min() and max() functions to calculate the minimum and maximum values in the dataset. Then, we subtract the min from the max.
+
+# Calculate the ranges for 4 of the variables in rom.dat. Make sure to write down both your code and the answers below:
+# For example:
+range.flex <- max(rom.dat$Flexion) - min(rom.dat$Flexion)
+range.flex
+#Answer: _ degrees
+
+
+
+
+# Interquartile Range: To calculate the IQR of a variable, we use the function IQR() .
+
+# Calculate the IQR for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+
+
+
+# Variance: To calculate the variance of a variable, we use the function var() .
+
+# Calculate the variances for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+
+
+
+# Standard Deviation: To calculate the SD of a variable, we use the function sd() .
+
+# Calculate the SD for each of the variables in rom.dat. Make sure to write down both your code and the answers below:
+
+
+
+# Now, compare your answers with those of the other person using the same dataset as you!
+
+
+# Bonus:
+# Can you compile all the means for each variable into vectors?
+
+
+
+# Can you combine these mean vectors into a matrix? 
+
+
+
+# Can you make vectors and matricies for the other statistics that we calculated above?
+
+
