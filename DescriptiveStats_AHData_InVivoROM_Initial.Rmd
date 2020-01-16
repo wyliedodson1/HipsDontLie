@@ -38,8 +38,8 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 # Today, we will 1) continue practicing with R and R Stuido, and 2) calculate descriptive statistics with Ashley's real data from real primates.
 
 # First, we need to import the data into R Studio from a .csv file.
-# I have created three .csv files for you on GitHub for three different primate species. These are called AHData_InVivoROM_Papio.csv, AHData_InVivoROM_Pan.csv, and AHData_InVivoROM_Macaca.csv . Please use the .csv file that you have been assigned.
-# Remeber, to import a .csv file into R, we use the function read.csv() .
+# I have created three .csv files for you on GitHub for three different primate genera. These are called AHData_InVivoROM_Papio.csv, AHData_InVivoROM_Pan.csv, and AHData_InVivoROM_Macaca.csv . Please use the .csv file that you have been assigned.
+# Remember, to import a .csv file into R, we use the function read.csv() .
 # We need to tell R which file to import and where to find it. We will use a second funtion, file.choose(), which will show you a pop-up window where you can navigate to the .csv file on your computer (like in Finder).
 
 #For example, if I had a .csv file with data on primate bones that I wanted to import into R, I could type:
@@ -73,9 +73,9 @@ mean(rom.dat$Flexion)
 
 
 
-# Range: To calculate the range of a variable, we have to do a little bit more work. We use the min() and max() functions to calculate the minimum and maximum values in the dataset. Then, we subtract the min from the max.
+# Range: To calculate the range of a variable, we use the min() and max() functions to calculate the minimum and maximum values in the dataset. Then, we subtract the min from the max.
 
-# Calculate the ranges for 4 of the variables in rom.dat. Make sure to write down both your code and the answers below:
+# Calculate the ranges for the variables in rom.dat. Make sure to write down both your code and the answers below:
 # For example:
 range.flex <- max(rom.dat$Flexion) - min(rom.dat$Flexion)
 range.flex
@@ -104,16 +104,14 @@ range.flex
 
 # Now, compare your answers with those of the other person using the same dataset as you!
 
+# Together, work to compile the statistics (mean, median, etc.) of each variable (Extension, Flexion, etc.) into vectors. Then compile these vectors into matrices/dataframes/lists with labels. Your end goal is to have one variable that, when printed, shows you every statistic for every variable.
 
-# Bonus:
-# Can you compile all the means for each variable into vectors?
-
-
-
-# Can you combine these mean vectors into a matrix? 
 
 
 
-# Can you make vectors and matricies for the other statistics that we calculated above?
+# Bonus:
+
+# Play around with the boxplot() function in R using your data. What statistics do boxplots show us?
+
 
 
