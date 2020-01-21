@@ -226,11 +226,11 @@ sd(rom.dat$ThighCircumference)
 # Answer:  7.104481 cm
 sd(rom.dat$ThighLength)
 # Answer: 2.006977 cm
-sd(rom.dat$BiiliacBreadth)
+sd(rom.dat$BiiliacBreadth, na.rm=TRUE)
 # Answer:
-sd(rom.dat$DistanceBetweenKnees)
+sd(rom.dat$DistanceBetweenKnees, na.rm=TRUE)
 # Answer:
-sd(rom.dat$BiepicondylarBreadth)
+sd(rom.dat$BiepicondylarBreadth, na.rm=TRUE)
 # Answer:
 sd(rom.dat$InternalRotation)
 # Answer: 9.126353 degrees
@@ -245,6 +245,15 @@ sd(rom.dat$ExternalRotation)
 # Together, work to compile the statistics (mean, median, etc.) of each variable (Extension, Flexion, etc.) into vectors. Then compile these vectors into matrices/dataframes/lists with labels. Your end goal is to have one variable that, when printed, shows you every statistic for every variable.
 
 
+```{r}
+means <- c(mean(rom.dat$Flexion), mean(rom.dat$Extension), mean(rom.dat$Abduction), mean(rom.dat$Adduction), mean(rom.dat$ThighCircumference), mean(rom.dat$ThighLength), mean(rom.dat$BiiliacBreadth, na.rm= TRUE), mean(rom.dat$DistanceBetweenKnees, na.rm= TRUE), mean(rom.dat$BiepicondylarBreadth, na.rm= TRUE), mean(rom.dat$InternalRotation), mean(rom.dat$ExternalRotation))
+
+medians <- c(median(rom.dat$Flexion), median(rom.dat$Extension), median(rom.dat$Abduction), median(rom.dat$Adduction), median(rom.dat$ThighCircumference), median(rom.dat$ThighLength), median(rom.dat$BiiliacBreadth, na.rm= TRUE), median(rom.dat$DistanceBetweenKnees, na.rm= TRUE), median(rom.dat$BiepicondylarBreadth, na.rm= TRUE), median(rom.dat$InternalRotation), median(rom.dat$ExternalRotation))
+
+ranges <- c(range.flex, range.ext, range.abd, range.add, range.thighcircum, range.thighlen, range.biiliac, range.kneedistance, range.biepicondylar, range.introtation, range.extrotation)
+
+iqrs <- c(IQR(rom.dat$Flexion), IQR(rom.dat$Extension), IQR(rom.dat$Abduction), IQR(rom.dat$Adduction), )
+```
 
 
 # Bonus:
