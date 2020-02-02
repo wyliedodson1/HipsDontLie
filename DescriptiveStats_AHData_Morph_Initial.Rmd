@@ -1,0 +1,175 @@
+---
+title: "DescriptiveStats_AHData_Morph_Initial"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+# Descriptive Statistics for Primate Morphology Data!
+
+# Tips to Remember:
+# 1. For each question, make sure to type your answer into this R Markdown and save!
+# 2. To run code that you have written in this R Markdown, highlight the code and click the "Run" button above or press command+return.
+# 3. A # allows you to add in text that will not run as code.
+# 4. Refer to the awesome Hips Don't Lie Cheat Sheet and/or previous R Markdowns for help with R code!
+
+# Today, we will 1) continue improving with R and R Stuido, and 2) calculate descriptive statistics with Ashley's real morphology data from primate bones.
+
+# Your will be working with the same genus and partner as you did for the Range of Motion (ROM) data: Macaca, Pan, or Papio.
+
+# 1. What genus are you working with?
+```{r}
+
+```
+# ^What's that gray box thing? It's called an R Code Chunk. Code Chunks make it easy to write and run bits of code. The output of your Chunk code will also automatically appear in the Chunk.
+# To add an R Code Chunk into your R Markdown, click the green "+C Insert" button in the editor toolbar above, then choose "R".
+# You can write and run code in a Chunk like you do with normal R code. You can also click the green ">" arrow at the top right of any Code Chunk to run all the code in that Chunk.
+
+
+# 2. Import the new morphology data into R Studio from a .csv file.
+# I have created three .csv files for you on GitHub for three different primate genera. These are called AHData_Morph_Macaca.csv, AHData_Morph_Pan.csv, and AHData_Morph_Papio.csv . Use the .csv file that you have been assigned.
+# Remember: To import a .csv file into R, we use the functions read.csv() and file.choose().
+
+# Import the correct .csv into R using the code below. We're calling this dataset morph.dat. (*Ask me if you want to know why I included the "row.names = NULL" term.)
+```{r}
+# Import morphology data:
+morph.dat <- read.csv(file.choose(), row.names = NULL)
+
+```
+
+
+# 3. Print morph.dat into the Console below. How many variables do you have?
+```{r}
+
+```
+
+
+# 4. Calculate the means for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
+```{r}
+# Example:
+flex.mean <- mean(rom.dat$Flexion)
+flex.mean
+```
+
+```{r}
+
+```
+
+
+# 5. Calculate the medians for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
+```{r}
+
+```
+
+
+# 6. Calculate the ranges for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
+```{r}
+
+```
+
+
+# 7. Calculate the Interquartile Range (IQR) for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
+```{r}
+
+```
+
+
+# 8. Calculate the variance for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
+```{r}
+
+```
+
+
+# 9. Calculate the Standard Deviations (SD) for each of the variables in morph.dat, and assign each a name. Make sure to write down both your code and the answers below:
+```{r}
+
+```
+
+
+# 10. Compare your answers with those of the other person using the same dataset as you! Did you get the same results? If not, why?
+```{r}
+#
+```
+
+
+# 11. Together, work to compile the statistics (mean, median, etc.) of each morphology variable (FemurHead, NSA, etc.) into vectors. Then, group these vectors together, with labels. Your end goal is to have one final variable that, when printed, shows you every statistic for every morphology variable. Use the example below as a guide:
+```{r}
+# Example:
+# Statistics vectors:
+means.all <- c(ext.mean, flex.mean, ab.mean, ad.mean)
+meds.all <- c(ext.med, flex.med, ab.med, ad.med)
+sds.all <- c(ext.sd, flex.sd, ab.sd, ad.sd)
+# Variable name vectors:
+rnames <- c("Mean", "Median", "Standard Deviation")
+cnames <- c("Extension", "Flexion", "Abduction", "Adduction")
+# Build matrix with row and column names:
+rom.stats <- rbind(means.all, meds.all, sds.all)
+rownames(rom.stats) <- rnames
+colnames(rom.stats) <- cnames
+# Print final matrix:
+rom.stats
+
+```
+
+# Your turn, with the morphology data:
+```{r}
+
+```
+
+
+# Graphing is an important aspect of descriptive statistics and R. Let's try some!
+# Boxplots (or box-and-whisker plots) are used to graphically represent data by splitting it into quartiles (sound familiar? Think IQR). To create boxplots in R, we use the function boxplot() .
+
+# 12. Create a boxplot for a variable of your choice from morph.dat.
+```{r}
+#Example:
+boxplot(rom.dat$Flexion)
+
+```
+
+```{r}
+
+```
+
+
+# 13. Use good Googling practices to explore online what the different elements of a boxplot mean. What does the dark bar in the middle represent?
+```{r}
+
+```
+
+
+# 14. Do the values shown on your boxplot from Question 12 match the corresponding statistics that you calculated earlier for that morphology variable? Compare.
+```{r}
+
+```
+
+
+# Bonus!
+
+# 15. Create one boxplot for all of morph.dat.
+
+
+
