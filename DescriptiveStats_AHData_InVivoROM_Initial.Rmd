@@ -252,7 +252,7 @@ medians <- c(median(rom.dat$Flexion), median(rom.dat$Extension), median(rom.dat$
 
 ranges <- c(range.flex, range.ext, range.abd, range.add, range.thighcircum, range.thighlen, range.biiliac, range.kneedistance, range.biepicondylar, range.introtation, range.extrotation)
 
-iqrs <- c(IQR(rom.dat$Flexion), IQR(rom.dat$Extension), IQR(rom.dat$Abduction), IQR(rom.dat$Adduction), )
+iqrs <- c(IQR(rom.dat$Flexion), IQR(rom.dat$Extension), IQR(rom.dat$Abduction), IQR(rom.dat$Adduction), IQR(rom.dat$ThighCircumference), IQR(rom.dat$ThighLength), IQR(rom.dat$BiiliacBreadth), IQR(rom.dat$DistanceBetweenKnees), IQR(rom.dat$BiepicondylarBreadth), IQR(rom.dat$InternalRotation), IQR(rom.dat$ExternalRotation))
 ```
 
 
