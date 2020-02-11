@@ -491,6 +491,16 @@ all.ranges <- c(fem.range, nsa.range, neck.range, l2.range, l4.range, fta.range,
 all.IQRs <- c(fem.IQR, nsa.IQR, neck.IQR, l2.IQR, l4.IQR, fta.IQR, ps.IQR, pi.IQR, as.IQR, ai.IQR, total.IQR, sup.IQR, ant.IQR, acetabular.IQR, pelvic.IQR)
 
 all.vars <- c(fem.var, nsa.var, neck.var, l2.var, l4.var, fta.var, ps.var, pi.var, as.var, ai.var, total.var, sup.var, ant.var, acetabular.var, pelvic.var)
+
+all.sd <- c(fem.sd, nsa.sd, neck.sd, l2.sd, l4.sd, fta.sd, ps.sd, pi.sd, as.sd, ai.sd, total.sd, sup.sd, ant.sd, acetabular.sd, pelvic.sd)
+
+cnames <- c("Femur Head", "NSA", "Neck Length", "L2", "L4", "FTA", "PS", "PI", "AS", "AI", "Total Area", "SUP", "ANT", "Acetabular Diameter", "Plevic Breadth")
+rnames <- c("Mean", "Median", "Range", "Interquartile Range", "Variance", "Standard Deviation")
+
+morph.stats <- rbind(all.means, all.medians, all.ranges, all.IQRs, all.vars, all.sd)
+rownames(morph.stats) <- rnames
+colnames(morph.stats) <- cnames
+morph.stats
 ```
 
 
@@ -505,25 +515,28 @@ boxplot(rom.dat$Flexion)
 ```
 
 ```{r}
-
+boxplot(morph.dat$NSA)
 ```
 
 
 # 13. Use good Googling practices to explore online what the different elements of a boxplot mean. What does the dark bar in the middle represent?
 ```{r}
-
+#median 
 ```
 
 
 # 14. Do the values shown on your boxplot from Question 12 match the corresponding statistics that you calculated earlier for that morphology variable? Compare.
 ```{r}
-
+# yes, on my data table it says the median is 122.4, and that's what the box plot looks like the line is around. 
 ```
 
 
 # Bonus!
 
 # 15. Create one boxplot for all of morph.dat.
+```{r}
+boxplot(morph.dat$FemurHead, morph.dat$NSA, morph.dat$NeckLength, morph.dat$L2, morph.dat$L4, morph.dat$FTA, morph.dat$PS, morph.dat$PI, morph.dat$AS, morph.dat$AI, morph.dat$TotalArea, morph.dat$SUP, morph.dat$ANT, morph.dat$AcetabularDiameter, morph.dat$PelvicBreadth)
+```
 
 
 
