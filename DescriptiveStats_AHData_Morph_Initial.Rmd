@@ -269,7 +269,7 @@ fem.IQR
 # 3.65
 
 nsa.IQR <- IQR(morph.dat$NSA)
-nsa.IQR
+nsa.IQR 
 # 9.53
 
 neck.IQR <- IQR(morph.dat$NeckLength)
@@ -515,7 +515,7 @@ boxplot(rom.dat$Flexion)
 ```
 
 ```{r}
-boxplot(morph.dat$NSA)
+boxplot(morph.dat$ANT)
 ```
 
 

@@ -84,6 +84,9 @@ mean(rom.dat$InternalRotation)
 # Answer: 36.09677 degrees
 mean(rom.dat$ExternalRotation)
 # Answer: 77 degrees
+```{r}
+
+```
 
 # Median: To calculate the median of a variable, we use the function median() .
 
@@ -259,6 +262,9 @@ iqrs <- c(IQR(rom.dat$Flexion), IQR(rom.dat$Extension), IQR(rom.dat$Abduction), 
 # Bonus:
 
 # Play around with the boxplot() function in R using your data. What statistics do boxplots show us?
+```{r}
+boxplot(morph.dat)
+```
 
 
 
