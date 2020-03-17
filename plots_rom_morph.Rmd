@@ -17,6 +17,7 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r cars}
 summary(cars)
+install.packages("car")
 ```
 
 ## Including Plots
@@ -28,3 +29,52 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+#Upload data
+```{r}
+rom.dat <- read.csv(file.choose())
+morph.dat <- read.csv(file.choose())
+```
+
+```{r}
+plot(rom.dat)
+```
+```{r}
+qqnorm(rom.dat$Extension, pch = 1, frame = FALSE)
+qqline(rom.dat$Extension, col = "steelbue", lwd = 2)
+```
+```{r}
+summary(cars)
+install.packages("car")
+library("car")
+qqPlot(rom.dat$Extension)
+```
+```{r}
+install.packages("car")
+library(car)
+qqPlot(rom.dat$Extension)
+```
+
+boxplot(rom.dat$)
+```{r}
+boxplot(rom.dat$Extension, rom.dat$Flexion, rom.dat$Abduction, rom.dat$Adduction, names = c("Extention", "Flexion", "Abduction", "Adduction"))
+
+```
+
+
+```{r}
+boxplot(rom.dat)
+```
+
+
+
+
+
+
+
+
+
+
+
+
