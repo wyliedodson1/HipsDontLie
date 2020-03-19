@@ -67,7 +67,13 @@ boxplot(rom.dat$Extension, rom.dat$Flexion, rom.dat$Abduction, rom.dat$Adduction
 boxplot(rom.dat)
 ```
 
-
+```{r}
+par(mfrow= c(1,2))
+qqPlot(rom.dat$Extension)
+title("Range of Motion")
+qqPlot(morph.dat$PelvicBreadth)
+title("Morphology")
+```
 
 
 
