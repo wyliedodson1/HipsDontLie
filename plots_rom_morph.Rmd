@@ -69,13 +69,20 @@ boxplot(rom.dat)
 
 ```{r}
 par(mfrow= c(1,2))
-qqPlot(rom.dat$Extension)
+qqPlot(rom.dat$Abduction)
 title("Range of Motion")
 qqPlot(morph.dat$PelvicBreadth)
 title("Morphology")
 ```
 
 
+```{r}
+par(mfrow=c(1,2))
+boxplot(rom.dat$BiepicondylarBreadth)
+title("Biepicondylar Breadth Box Plot")
+qqPlot(rom.dat$BiepicondylarBreadth)
+title("Biepicondylar Breadth Q-Q Plot")
+```
 
 
 
