@@ -87,6 +87,27 @@ title("Biepicondylar Breadth Q-Q Plot")
 
 
 
+#Spread sheet data graphs 
+```{r}
+ss.data <- read.csv(file.choose())
+```
+```{r}
+plot(ss.data$pelvic_breadth, ss.data$abduction, xlab= "Pelvic Breadth", ylab="Abduction", col=c("green", "purple"), pch=11, title("Goofy Graph"))
+```
+
+```{r}
+plot(ss.data$acetab_diameter, ss.data$PI, xlab= "Acetabular Diameter", ylab="PI", col = c("red", "orange"), title("Acetab vs. PI"), pch= 17)
+```
+
+```{r}
+boxplot(ss.data)
+```
+
+```{r}
+install.packages("car")
+library(car)
+qqPlot(ss.data$femur_head)
+```
 
 
 
