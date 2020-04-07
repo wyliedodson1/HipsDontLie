@@ -1,0 +1,90 @@
+---
+title: "Primate Data Analyses"
+author: "Lucrecia Aguilar"
+date: "4/7/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+# Primate Data Analyses
+
+# Now that we have a clean, full dataset for our primate morphology and range of motion (ROM) data, we need to start analyzing the data to help us understand possible relationships between bone morphology and ROM.
+
+# Look back at previous R Markdowns and DataCamp courses for help! And please ask me for help when you need it!
+
+
+# 1. Import the full primate dataset from GitHub (PrimateMorphROMData_Full.csv):
+```{r}
+pri.dat <- 
+```
+
+
+# 2. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable in your dataset. Assign each mean and SD to a new variable!
+# Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs. Ex: mean(x, na.rm=TRUE)
+```{r}
+
+```
+
+
+# 3. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
+# Tip: Remember the square brackets? []
+```{r}
+
+```
+
+
+# 4. Graphing: Create scatterplots (with the plots() function) with Abduction (an ROM variable) as the y variable (dependent variable) and morphology variables (Femur Head, NSA, Neck, etc.) as the x variable (independent variable). Make sure to include axis labels, titles, and appropriate colors.
+```{r}
+
+```
+
+
+# 5. Using comments (#), label any of your scatterplots that you think show a relationship between Abduction and the morphology variable.
+
+
+# 6. Graphing: Create scatterplots (with the plots() function) with Abducted Knee Position (an ROM variable) as the y variable (dependent variable) and morphology variables (Femur Head, NSA, Neck, etc.) as the x variable (independent variable). Make sure to include axis labels, titles, and appropriate colors.
+```{r}
+
+```
+
+
+# 7. Using comments (#), label any of your scatterplots that you think show a relationship between Abduction and the morphology variable.
+
+
+# 8. Create two boxplots side-by-side to compare the Abduction of all Suspensory and all Non-Suspensory primates (using the Locomotion variable)
+# Tip: Remember the square brackets? []
+```{r}
+
+```
+
+
+# 9. Create two boxplots side-by-side to compare the Abducted Knee Position of all Suspensory and all Non-Suspensory primates (using the Locomotion variable)
+# Tip: Remember the square brackets? []
+```{r}
+
+```
+
