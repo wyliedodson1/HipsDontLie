@@ -1,0 +1,92 @@
+---
+title: "Primate Correlations"
+author: "Lucrecia Aguilar"
+date: "4/28/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+## PURPOSE
+# Conducting *correlation tests* between primate bone *morphology* (FemurHead, NSA, etc.) variables and *range of motion* (Abduction, AbductedKnee) variables. This will help us understand the relationships between morphology and range of motion in primate hips, which in turn helps us understand why primates move in different ways.
+
+
+## INSTRUCTIONS
+# *Correlation tests* are used to evaluate the relationships between variables. 
+
+# We will be calculating the *Correlation Coefficients* between all the bone morphology variables and the two range of motion (ROM) variables for all species in our primate dataset.
+# We will use the *Spearman rho Correlation* (or Spearman Rank Correlation) method because our data are likely not normally distributed (meaning that they do not follow a nice bell curve). This is called a non-parametric test.
+
+# To do this in R, we will use the *cor() function*, which follows this format:
+# cor(x, y, method = "spearman", use = "complete.obs")
+# In this format:
+# x and y are numeric variables; For us, x will be a morphology variable and y will be a ROM variable.
+# method specifies our correlation method (Spearman).
+# use = "complete.obs" tells R how to handle missing or NA values in the data.
+
+# A correlation coefficient is always a number between -1 and 1. If a correlation coefficient is:
+# close to -1, then there is a strong *negative* correlation between the two variables (as x increases, y decreases).
+# close to 0, then there is no relationship/correlation between the two variables.
+# close to 1, then there is a strong *positive* correlation between the two variables (as x increases, y increases). 
+
+# In your group, you will calculate the correlation coefficients for EACH morphology variable vs. EITHER Abduction or Abducted Knee Position. Interpret the results to determine which morphology variables are most correlated with the range of motion variables.
+# Group 1 (Sophie, Haesu, Miranda): Calculate morphology variable correlations to the *Abduction* ROM variable.
+# Group 2 (Nyla, Wylie, Hanora): Calculate morphology variable correlations to the *AbductedKnee* ROM variable.
+
+
+## REMINDERS
+# Properly label your code with # comments! 
+# SAVE YOUR WORK!
+# Look back at previous R Markdowns and DataCamp courses for help! And please ask for help when you need it!
+
+
+## WORKFLOW
+# 1. Import the full primate dataset from your GitHub folder (PrimateMorphROMData_Full.csv):
+```{r}
+pri.dat <- read.csv(file.choose())
+pri.dat
+```
+
+# 2. Use the cor() function to calculate the Spearman rho Correlation Coefficient between EACH morphology variable (15 variables total) and your group's assigned ROM variable (EITHER Abduction OR AbductedKnee). Write each correlation coefficient next to your code with a #.
+```{r}
+#Example:
+cor(pri.dat$FemurHead, pri.dat$Abduction, method = "spearman", use = "complete.obs") # rho = 0.1932215
+
+# Your turn:
+
+```
+
+# 3. List which morphology variables are MOST STRONGLY correlated to your ROM variable. Specify if these are positive or negative correlations.
+```{r}
+
+```
+
+# 4. What do your results mean in real life? What have we learned about the relationships between morphologies and range of motion in primate hips? Interpret your correlation coefficients from above with words.
+```{r}
+
+```
+

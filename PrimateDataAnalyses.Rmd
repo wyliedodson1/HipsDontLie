@@ -44,7 +44,7 @@ pri.dat <-
 
 
 # 2. Descriptive statistics: Calculate the means and standard deviations (SD) for each morphology and ROM variable in your dataset. Assign each mean and SD to a new variable!
-# Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs. Ex: mean(x, na.rm=TRUE)
+# Tip: Use the na.rm=TRUE argument in your funtions if dealing with NAs in your data. Ex: mean(x, na.rm=TRUE)
 ```{r}
 
 ```
