@@ -90,11 +90,240 @@ sd.abductedknee <- sd(pri.dat$AbductedKnee, na.rm=TRUE)
 # 3. Descriptive statistics: Calculate the sds and standard deviations (SD) for each morphology and ROM variable by GENUS. For example, what is the mean Femur Head size for primates in the Alouatta genus?
 # Tip: Remember the square brackets? []
 ```{r}
+#FEMUR HEAD
 mean.fh_alouatta <- mean(pri.dat$FemurHead[1:10])
 mean.fh_alouatta
 mean.fh_ateles <- mean(pri.dat$FemurHead[11:24])
 mean.fh_ateles
-
+mean.fh_cebus <- mean(pri.dat$FemurHead[25:33])
+mean.fh_cebus 
+mean.fh_cercopithecus <- mean(pri.dat$FemurHead[34:41])
+mean.fh_cercopithecus
+mean.fh_colobus <- mean(pri.dat$FemurHead[42:46])
+mean.fh_colobus
+mean.fh_erythrocebus <- mean(pri.dat$FemurHead[47:51])
+mean.fh_erythrocebus
+mean.fh_gorilla <- mean(pri.dat$FemurHead[52:75])
+mean.fh_gorilla
+mean.fh_hylobates <- mean(pri.dat$FemurHead[76:92])
+mean.fh_hylobates 
+mean.fh_macaca <- mean(pri.dat$FemurHead[93:108])
+mean.fh_macaca 
+mean.fh_nasalis <- mean(pri.dat$FemurHead[109:125])
+mean.fh_nasalis
+mean.fh_pan <- mean(pri.dat$FemurHead[126:154])
+mean.fh_pan
+mean.fh_papio <- mean(pri.dat$FemurHead[155:171])
+mean.fh_papio
+mean.fh_pongo <- mean(pri.dat$FemurHead[172:192])
+mean.fh_pongo
+mean.fh_procolobus <- mean(pri.dat$FemurHead[193:196])
+mean.fh_procolobus
+mean.fh_pygathrix <- mean(pri.dat$FemurHead[197:203])
+mean.fh_pygathrix
+mean.fh_rhinopithecus <- mean(pri.dat$FemurHead[204:206])
+mean.fh_rhinopithecus
+mean.fh_symphalangus <- mean(pri.dat$FemurHead[207:227])
+mean.fh_symphalangus
+mean.fh_theropithecus <- mean(pri.dat$FemurHead[228:236])
+mean.fh_theropithecus
+mean.fh_trachypithecus <- mean(pri.dat$FemurHead[237:252])
+mean.fh_trachypithecus
+#NECK SHAFT ANGLE
+mean.nsa_alouatta <- mean(pri.dat$NSA[1:10])
+mean.nsa_alouatta
+mean.nsa_ateles <- mean(pri.dat$NSA[11:24])
+mean.nsa_ateles
+mean.nsa_cebus <- mean(pri.dat$NSA[25:33])
+mean.nsa_cebus
+mean.nsa_cercopithecus <- mean(pri.dat$NSA[34:41])
+mean.nsa_cercopithecus
+mean.nsa_colobus <- mean(pri.dat$NSA[42:46])
+mean.nsa_colobus
+mean.nsa_erythrocebus <- mean(pri.dat$NSA[47:51])
+mean.nsa_erythrocebus
+mean.nsa_gorilla <- mean(pri.dat$NSA[52:75])
+mean.nsa_gorilla
+mean.nsa_hylobates <- mean(pri.dat$NSA[76:92])
+mean.nsa_hylobates
+mean.nsa_macaca <- mean(pri.dat$NSA[93:108])
+mean.nsa_macaca
+mean.nsa_nasalis <- mean(pri.dat$NSA[109:125])
+mean.nsa_nasalis
+mean.nsa_pan <- mean(pri.dat$NSA[126:154])
+mean.nsa_pan
+mean.nsa_papio <- mean(pri.dat$NSA[155:171])
+mean.nsa_papio
+mean.nsa_pongo <- mean(pri.dat$NSA[172:192])
+mean.nsa_pongo
+mean.nsa_procolobus <- mean(pri.dat$NSA[193:196])
+mean.nsa_procolobus
+mean.nsa_pygathrix <- mean(pri.dat$NSA[197:203])
+mean.nsa_pygathrix
+mean.nsa_rhinopithecus <- mean(pri.dat$NSA[204:206])
+mean.nsa_rhinopithecus
+mean.nsa_symphalangus <- mean(pri.dat$NSA[207:227])
+mean.nsa_symphalangus
+mean.nsa_theropithecus <- mean(pri.dat$NSA[228:236])
+mean.nsa_theropithecus
+mean.nsa_trachypithecus <- mean(pri.dat$NSA[237:252])
+mean.nsa_trachypithecus
+#NECK LENGTH
+mean.neck_alouatta <- mean(pri.dat$Neck[1:10])
+mean.neck_alouatta
+mean.neck_ateles <- mean(pri.dat$Neck[11:24])
+mean.neck_ateles
+mean.neck_cebus <- mean(pri.dat$Neck[25:33])
+mean.neck_cebus
+mean.neck_cercopithecus <- mean(pri.dat$Neck[34:41])
+mean.neck_cercopithecus
+mean.neck_colobus <- mean(pri.dat$Neck[42:46])
+mean.neck_colobus
+mean.neck_erythrocebus <- mean(pri.dat$Neck[47:51])
+mean.neck_erythrocebus
+mean.neck_gorilla <- mean(pri.dat$Neck[52:75])
+mean.neck_gorilla
+mean.neck_hylobates <- mean(pri.dat$Neck[76:92])
+mean.neck_hylobates
+mean.neck_macaca <- mean(pri.dat$Neck[93:108])
+mean.neck_macaca
+mean.neck_nasalis <- mean(pri.dat$Neck[109:125])
+mean.neck_nasalis
+mean.neck_pan <- mean(pri.dat$Neck[126:154])
+mean.neck_pan
+mean.neck_papio <- mean(pri.dat$Neck[155:171])
+mean.neck_papio
+mean.neck_pongo <- mean(pri.dat$Neck[172:192])
+mean.neck_pongo
+mean.neck_procolobus <- mean(pri.dat$Neck[193:196])
+mean.neck_procolobus
+mean.neck_pygathrix <- mean(pri.dat$Neck[197:203])
+mean.neck_pygathrix
+mean.neck_rhinopithecus <- mean(pri.dat$Neck[204:206])
+mean.neck_rhinopithecus
+mean.neck_symphalangus <- mean(pri.dat$Neck[207:227])
+mean.neck_symphalangus
+mean.neck_theropithecus <- mean(pri.dat$Neck[228:236])
+mean.neck_theropithecus
+mean.neck_trachypithecus <- mean(pri.dat$Neck[237:252])
+mean.neck_trachypithecus
+#L2
+mean.l2_alouatta <- mean(pri.dat$L2[1:10])
+mean.l2_alouatta
+mean.l2_ateles <- mean(pri.dat$L2[11:24])
+mean.l2_ateles
+mean.l2_cebus <- mean(pri.dat$L2[25:33])
+mean.l2_cebus
+mean.l2_cercopithecus <- mean(pri.dat$L2[34:41])
+mean.l2_cercopithecus
+mean.l2_colobus <- mean(pri.dat$L2[42:46])
+mean.l2_colobus
+mean.l2_erythrocebus <- mean(pri.dat$L2[47:51])
+mean.l2_erythrocebus
+mean.l2_gorilla <- mean(pri.dat$L2[52:75])
+mean.l2_gorilla
+mean.l2_hylobates <- mean(pri.dat$L2[76:92])
+mean.l2_hylobates
+mean.l2_macaca <- mean(pri.dat$L2[93:108])
+mean.l2_macaca
+mean.l2_nasalis <- mean(pri.dat$L2[109:125])
+mean.l2_nasalis
+mean.l2_pan <- mean(pri.dat$L2[126:154])
+mean.l2_pan
+mean.l2_papio <- mean(pri.dat$L2[155:171])
+mean.l2_papio
+mean.l2_pongo <- mean(pri.dat$L2[172:192])
+mean.l2_pongo
+mean.l2_procolobus <- mean(pri.dat$L2[193:196])
+mean.l2_procolobus
+mean.l2_pygathrix <- mean(pri.dat$L2[197:203])
+mean.l2_pygathrix
+mean.l2_rhinopithecus <- mean(pri.dat$L2[204:206])
+mean.l2_rhinopithecus
+mean.l2_symphalangus <- mean(pri.dat$L2[207:227])
+mean.l2_symphalangus
+mean.l2_theropithecus <- mean(pri.dat$L2[228:236])
+mean.l2_theropithecus
+mean.l2_trachypithecus <- mean(pri.dat$L2[237:252])
+mean.l2_trachypithecus
+#L4
+mean.l4_alouatta <- mean(pri.dat$L4[1:10])
+mean.l4_alouatta
+mean.l4_ateles <- mean(pri.dat$L4[11:24])
+mean.l4_ateles
+mean.l4_cebus <- mean(pri.dat$L4[25:33])
+mean.l4_cebus
+mean.l4_cercopithecus <- mean(pri.dat$L4[34:41])
+mean.l4_cercopithecus
+mean.l4_colobus <- mean(pri.dat$L4[42:46])
+mean.l4_colobus
+mean.l4_erythrocebus <- mean(pri.dat$L4[47:51])
+mean.l4_erythrocebus
+mean.l4_gorilla <- mean(pri.dat$L4[52:75])
+mean.l4_gorilla
+mean.l4_hylobates <- mean(pri.dat$L4[76:92])
+mean.l4_hylobates
+mean.l4_macaca <- mean(pri.dat$L4[93:108])
+mean.l4_macaca
+mean.l4_nasalis <- mean(pri.dat$L4[109:125])
+mean.l4_nasalis
+mean.l4_pan <- mean(pri.dat$L4[126:154])
+mean.l4_pan
+mean.l4_papio <- mean(pri.dat$L4[155:171])
+mean.l4_papio
+mean.l4_pongo <- mean(pri.dat$L4[172:192])
+mean.l4_pongo
+mean.l4_procolobus <- mean(pri.dat$L4[193:196])
+mean.l4_procolobus
+mean.l4_pygathrix <- mean(pri.dat$L4[197:203])
+mean.l4_pygathrix
+mean.l4_rhinopithecus <- mean(pri.dat$L4[204:206])
+mean.l4_rhinopithecus
+mean.l4_symphalangus <- mean(pri.dat$L4[207:227])
+mean.l4_symphalangus
+mean.l4_theropithecus <- mean(pri.dat$L4[228:236])
+mean.l4_theropithecus
+mean.l4_trachypithecus <- mean(pri.dat$L4[237:252])
+mean.l4_trachypithecus
+#FTA 
+mean.fta_alouatta <- mean(pri.dat$FTA[1:10])
+mean.fta_alouatta
+mean.fta_ateles <- mean(pri.dat$FTA[11:24])
+mean.fta_ateles
+mean.fta_cebus <- mean(pri.dat$FTA[25:33])
+mean.fta_cebus
+mean.fta_cercopithecus <- mean(pri.dat$FTA[34:41])
+mean.fta_cercopithecus
+mean.fta_colobus <- mean(pri.dat$FTA[42:46])
+mean.fta_colobus
+mean.fta_erythrocebus <- mean(pri.dat$FTA[47:51])
+mean.fta_erythrocebus
+mean.fta_gorilla <- mean(pri.dat$FTA[52:75])
+mean.fta_gorilla
+mean.fta_hylobates <- mean(pri.dat$FTA[76:92])
+mean.fta_hylobates
+mean.fta_macaca <- mean(pri.dat$FTA[93:108])
+mean.fta_macaca
+mean.fta_nasalis <- mean(pri.dat$FTA[109:125])
+mean.fta_nasalis
+mean.fta_pan <- mean(pri.dat$FTA[126:154])
+mean.fta_pan
+mean.fta_papio <- mean(pri.dat$FTA[155:171])
+mean.fta_papio
+mean.fta_pongo <- mean(pri.dat$FTA[172:192])
+mean.fta_pongo
+mean.fta_procolobus <- mean(pri.dat$FTA[193:196])
+mean.fta_procolobus
+mean.fta_pygathrix <- mean(pri.dat$FTA[197:203])
+mean.fta_pygathrix
+mean.fta_rhinopithecus <- mean(pri.dat$FTA[204:206])
+mean.fta_rhinopithecus
+mean.fta_symphalangus <- mean(pri.dat$FTA[207:227])
+mean.fta_symphalangus
+mean.fta_theropithecus <- mean(pri.dat$FTA[228:236])
+mean.fta_theropithecus
+mean.fta_trachypithecus <- mean(pri.dat$FTA[237:252])
+mean.fta_trachypithecus
 ```
 
 
