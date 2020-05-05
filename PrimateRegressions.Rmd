@@ -1,0 +1,201 @@
+---
+title: "Primate Regressions"
+author: "Lucrecia Aguilar"
+date: "5/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+## PURPOSE
+# Creating *linear regression models* between primate bone *morphology* (FemurHead, NSA, etc.) variables and *range of motion* (Abduction, AbductedKnee) variables. This builds on our correlation tests to help us understand the relationships between morphology and range of motion in primate hips, which in turn helps us understand why primates move in different ways.
+
+
+## REMINDERS
+# Properly label your code with # comments! 
+# SAVE YOUR WORK!
+# Look back at previous R Markdowns and DataCamp courses for help! And please ask for help when you need it!
+
+
+## INSTRUCTIONS
+# In your group, you will create linear regression models for EITHER Abduction or Abducted Knee Position and EACH morphology variable. Interpret the results to determine which morphology variables best predict the range of motion variables.
+# Group 1 (Sophie, Haesu, Miranda): *Abduction* ROM variable
+# Group 2 (Nyla, Wylie, Hanora): *AbductedKnee* ROM variable
+
+
+# *Linear regression* is a statistical technique that models the linear relationship between a dependent ('y' or 'response') variable and one or more independent ('x' or 'explanatory') variables. It follows the equation *y = m(x) + b*, where:
+# y is the dependent/response variable.
+# x is the independent/explanatory variable.
+# m is the slope (remember: rise/run).
+# b is the y-intercept.
+# Essentially, you give R the x and y variables, and R will give you the slopes and y-intercept!
+
+# We will be creating *simple linear regression* models between one of the two range of motion (ROM) variables and each of the bone morphology variables for all species in our primate dataset. In our linear regression models:
+# y/dependent/response variable = ROM variable (Abduction OR AbductedKnee)
+# x/independent/explanatory variable(s) = morphology variables (FemurHead, NSA, etc.)
+
+# To perform linear regression in R, we need the *lm() function*, which follows this format:
+# lm(y ~ x, data = dataset)
+# In this format:
+# y is the dependent/response variable; For us, this is an ROM variable.
+# x is the independent/explanatory variable; For us, this is a morphology variable.
+# data argument is used to specify which dataset you want R to use for this model; For us, we will use the pri.dat dataset.
+
+
+## WORKFLOW
+# 1. Import the full primate dataset from your GitHub folder (PrimateMorphROMData_Full.csv):
+```{r}
+pri.dat <- read.csv(file.choose())
+pri.dat
+```
+
+# 2. Use the lm() function to create simple linear regression models between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and EACH morphology variable (15 variables total). Make sure to name each model for future use.
+```{r}
+#Example:
+lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
+
+# Your turn:
+
+```
+
+
+## INSTRUCTIONS
+# After building your linear regression model with lm(), summarize it with the *summary() function*, which follows this format:
+# summary(lmName)
+# In this format:
+# lmName is the name of the linear regression model you created with lm().
+# The summary() function will give you a bunch of information about your model, most importantly:
+# *Coefficient Estimates* (listed under "Coefficients", then "Estimate"): slopes and y-intercept values; under the "Estimate" column, the y-intercept is in the "(Intercept)" row and the slope is in the row labeled by your x variable.
+# *p values* (listed under "Coefficients", then "Pr (>|t|)"): tells you if your x variable really does predict your y variable significantly. If the p value in the row labeled with your x variable is LESS THAN 0.05, then you can assume that the relationship between your x and y variables is significant (yay!).
+# *Adjusted R-squared* (listed near the bottom, next to "Multiple R-squared"): measures how good your model is. If R-squared is CLOSE TO 1, your model is a good fit! If R-squared is CLOSE TO 0, your model doesn't work very well.
+
+
+## WORKFLOW
+# 3a. Look at each of your linear regression models from #2. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
+```{r}
+#Example:
+summary(lmFemurHead)
+
+# Your turn:
+
+```
+
+# 3b. Which of your models show a significant relationship between the ROM (y) variable and the morphology (x) variable (p value in the x variable row is LESS THAN 0.05)?
+```{r}
+
+```
+
+# 3c. Which of your models are strong models that adequately describe the relationship between the ROM (y) variable and the morphology (x) variable (adjusted R-squared is close to 1, which we will define as GREATER THAN 0.5)?
+```{r}
+
+```
+
+
+## INSTRUCTIONS
+# Finally, you want to plot your linear regression model as a scatterplot using the *plot()* and *abline()* functions. To do this, follow this format:
+# plot(x, y)
+# abline(lmName)
+# In this format:
+# x is the independent/explanatory variable (morphology variable).
+# y is the dependent/response variable (ROM variable).
+# lmName is the name of the linear regression model you created with lm().
+# This will create a scatterplot of your x and y variables with the best-fit linear regression line.
+# Remember: you can add axis labels, titles, text, colors, etc. to your plots using the skills you learned in the Data Visualization in R DataCamp course!
+
+
+## WORKFLOW
+# 4a. Plot each of your linear regression models using the plot() and abline() functions.
+```{r}
+#Example:
+plot(pri.dat$FemurHead, pri.dat$Abduction)
+abline(lmFemurHead)
+# You can add labels, titles, text, colors, etc. if you like!
+
+# Your turn:
+
+```
+
+# 4b. From the scatterplots above, which of your models look like good fits (best-fit line follows the data well)?
+```{r}
+
+```
+
+
+# 5. Given all the information above, which morphology variables best predict (show the strongest linear relationship with) your ROM variable? Specify if these relationships are positive (positive slope, upward sloping line) or negative (negative slope, negative sloping line) relationships.
+```{r}
+
+```
+
+# 6. Are the morphology variables that best predict your ROM variable (from #5. above) the same or different from the morphology variabels that showed the strongest correlation to your ROM variable last week (#3. in the PrimateCorrelations.Rmd R Markdown)?
+```{r}
+
+```
+
+
+## BONUS
+
+## INSTRUCTIONS
+# *Multiple linear regression* models the linear relationship between a dependent ('y' or 'response') variable and MORE THAN ONE independent ('x' or 'explanatory') variable. It follows the equation *y = m1(x1) + m2(x2) + ... + b*, where:
+# y is the dependent/response variable (ROM variable).
+# x1 is an independent/explanatory variable (morphology variable).
+# m1 is the slope for x1.
+# x2 is ANOTHER independent/explanatory variable (morphology variable).
+# m2 is the slope for x2.
+# b is the y-intercept.
+# You can include as many x variables as you want.
+
+# Let's make a multiple regression model between your range of motion (ROM) variable and multiple morphology variables for all species in our primate dataset!
+
+# To do this, just add more x variables to the lm() function, like this:
+# lm(y ~ x1 + x2 + x3, data = dataset)
+# Then use the summary() function exactly as you did before with the simple linear regression models.
+
+
+## WORKFLOW
+# 7. Use the lm() function to create a multiple linear regression model between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and the morphology variables that best predicted your ROM variable in the simple linear regression models (from #5. above). Make sure to name the model for future use.
+```{r}
+
+```
+
+# 8. Look at your multiple linear regression model from #7. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
+```{r}
+
+```
+
+# 9. Which of the morphology (x) variables show a significant relationship with the ROM (y) variable (p value in the x variable row is LESS THAN 0.05)?
+```{r}
+
+```
+
+# 10. What does the adjusted R-squared value for your multiple linear regression model say about your model?
+```{r}
+
+```
+
+# 11. You made it to the end! Ask me about the issues of *residuals* and *influential points* :) 
+
+
