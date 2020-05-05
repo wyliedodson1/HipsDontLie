@@ -76,9 +76,24 @@ pri.dat
 # 2. Use the lm() function to create simple linear regression models between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and EACH morphology variable (15 variables total). Make sure to name each model for future use.
 ```{r}
 #Example:
-lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
+# lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
 
 # Your turn:
+lmFemurHead <- lm(AbductedKnee ~ FemurHead, data = pri.dat)
+lmNSA <- lm(AbductedKnee ~ NSA, data = pri.dat)
+lmNeck <- lm(AbductedKnee ~ Neck, data = pri.dat)
+lmL2 <- lm(AbductedKnee ~ L2, data = pri.dat)
+lmL4 <- lm(AbductedKnee ~ L4, data = pri.dat)
+lmFTA <- lm(AbductedKnee ~ FTA, data = pri.dat)
+lmPS <- lm(AbductedKnee ~ PS, data = pri.dat)
+lmPI <- lm(AbductedKnee ~ PI, data = pri.dat)
+lmAS <- lm(AbductedKnee ~ AS, data = pri.dat)
+lmAI <- lm(AbductedKnee ~ AI, data = pri.dat)
+lmTotalArea <- lm(AbductedKnee ~ TotalArea, data = pri.dat)
+lmSUP <- lm(AbductedKnee ~ SUP, data = pri.dat)
+lmANT <- lm(AbductedKnee ~ ANT, data = pri.dat)
+lmAcetabDiameter <- lm(AbductedKnee ~ AcetabDiameter, data = pri.dat)
+lmPelvicBreadth <- lm(AbductedKnee ~ PelvicBreadth, data = pri.dat)
 
 ```
 
@@ -98,20 +113,34 @@ lmFemurHead <- lm(Abduction ~ FemurHead, data = pri.dat)
 # 3a. Look at each of your linear regression models from #2. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
 ```{r}
 #Example:
-summary(lmFemurHead)
+# summary(lmFemurHead)
 
 # Your turn:
-
+summary(lmFemurHead)
+summary(lmNSA)
+summary(lmNeck)
+summary(lmL2)
+summary(lmL4)
+summary(lmFTA)
+summary(lmPS)
+summary(lmPI)
+summary(lmAS)
+summary(lmAI)
+summary(lmTotalArea)
+summary(lmSUP)
+summary(lmANT)
+summary(lmAcetabDiameter)
+summary(lmPelvicBreadth)
 ```
 
-# 3b. Which of your models show a significant relationship between the ROM (y) variable and the morphology (x) variable (p value in the x variable row is LESS THAN 0.05)?
+summary(lmFemurHead)# 3b. Which of your models show a significant relationship between the ROM (y) variable and the morphology (x) variable (p value in the x variable row is LESS THAN 0.05)?
 ```{r}
-
+# Femur Head, NSA, Neck, L2, L4, FTA, PS, PI, AS, AI, Total Area, SUP, ANT, Acetabular Diameter, Pelvic Breadth. 
 ```
 
 # 3c. Which of your models are strong models that adequately describe the relationship between the ROM (y) variable and the morphology (x) variable (adjusted R-squared is close to 1, which we will define as GREATER THAN 0.5)?
 ```{r}
-
+# Femur Head, Neck, L2, L4, PS, PI, AS, AI, Total Area, Acetabular Diameter, Pelvic Breadth 
 ```
 
 
@@ -131,28 +160,71 @@ summary(lmFemurHead)
 # 4a. Plot each of your linear regression models using the plot() and abline() functions.
 ```{r}
 #Example:
-plot(pri.dat$FemurHead, pri.dat$Abduction)
-abline(lmFemurHead)
+# plot(pri.dat$FemurHead, pri.dat$Abduction)
+# abline(lmFemurHead)
 # You can add labels, titles, text, colors, etc. if you like!
 
 # Your turn:
+plot(pri.dat$FemurHead, pri.dat$AbductedKnee)
+abline(lmFemurHead) 
 
+plot(pri.dat$NSA, pri.dat$AbductedKnee)
+abline(lmNSA)
+
+plot(pri.dat$Neck, pri.dat$AbductedKnee)
+abline(lmNeck)
+
+plot(pri.dat$L2, pri.dat$AbductedKnee)
+abline(lmL2)
+
+plot(pri.dat$L4, pri.dat$AbductedKnee)
+abline(lmL4)
+
+plot(pri.dat$FTA, pri.dat$AbductedKnee)
+abline(lmFTA)
+
+plot(pri.dat$PS, pri.dat$AbductedKnee)
+abline(lmPS)
+
+plot(pri.dat$PI, pri.dat$AbductedKnee)
+abline(lmPI)
+
+plot(pri.dat$AS, pri.dat$AbductedKnee)
+abline(lmAS)
+
+plot(pri.dat$AI, pri.dat$AbductedKnee)
+abline(lmAI)
+
+plot(pri.dat$TotalArea, pri.dat$AbductedKnee)
+abline(lmTotalArea)
+
+plot(pri.dat$SUP, pri.dat$AbductedKnee)
+abline(lmSUP)
+
+plot(pri.dat$ANT, pri.dat$AbductedKnee)
+abline(lmANT)
+
+plot(pri.dat$AcetabDiameter, pri.dat$AbductedKnee)
+abline(lmAcetabDiameter)
+
+plot(pri.dat$PelvicBreadth, pri.dat$AbductedKnee)
+abline(lmPelvicBreadth)
 ```
 
 # 4b. From the scatterplots above, which of your models look like good fits (best-fit line follows the data well)?
 ```{r}
-
+# Femur Head, Neck, L2, Acetabular Diameter, Pelvic Breadth 
 ```
 
 
 # 5. Given all the information above, which morphology variables best predict (show the strongest linear relationship with) your ROM variable? Specify if these relationships are positive (positive slope, upward sloping line) or negative (negative slope, negative sloping line) relationships.
 ```{r}
-
+# Femur Head, Neck, L2, Acetabular Diameter, and Pelvic Breadth, which are all positive 
 ```
 
 # 6. Are the morphology variables that best predict your ROM variable (from #5. above) the same or different from the morphology variabels that showed the strongest correlation to your ROM variable last week (#3. in the PrimateCorrelations.Rmd R Markdown)?
 ```{r}
-
+# All of the answers to number 5 are also answers to number 3, so yes they are the same. 
 ```
 
 
