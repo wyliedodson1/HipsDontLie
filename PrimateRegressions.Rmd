@@ -250,12 +250,12 @@ abline(lmPelvicBreadth)
 ## WORKFLOW
 # 7. Use the lm() function to create a multiple linear regression model between your group's assigned ROM variable (EITHER Abduction OR AbductedKnee) and the morphology variables that best predicted your ROM variable in the simple linear regression models (from #5. above). Make sure to name the model for future use.
 ```{r}
-
+AbK_best <- lm(pri.dat$AbductedKnee ~ pri.dat$FemurHead + pri.dat$Neck + pri.dat$L2 + pri.dat$AcetabDiameter + pri.dat$PelvicBreadth, data = pri.dat)
 ```
 
 # 8. Look at your multiple linear regression model from #7. using the summary() function. Remember to focus on the Coefficient Estimates (slope and y-intercept), p values, and adjusted R-squared values.
 ```{r}
-
+lm(AbK_best)
 ```
 
 # 9. Which of the morphology (x) variables show a significant relationship with the ROM (y) variable (p value in the x variable row is LESS THAN 0.05)?
