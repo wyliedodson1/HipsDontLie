@@ -50,11 +50,14 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 # Step 1: Specify the null hypothesis, H0.
 ```{r}
 # H0: There is no difference between suspensory and non-suspensory primates for a given variable.
+
 ```
 
 # Step 2: Specify the alternative hypothesis, H1.
 ```{r}
 # H1: There is a difference between suspensory and non-suspensory primates for a given variable.
+# 
+
 ```
 
 #Step 3: Choose and use a test statistic.
@@ -93,12 +96,12 @@ pri.dat
 
 # 2. Explain the *null hypothesis*, H0, in your own words.
 ```{r}
-#
+# H0: There is no difference between suspensory and non-suspensory primates for a given variable.
 ```
 
 # 3. Explain the *alternative hypothesis*, Ha or H1, in your own words.
 ```{r}
-#
+# H1: There is a difference between suspensory and non-suspensory primates for a given variable.
 ```
 
 # 4. Use the wilcox.test() function to conduct Mann-Whitney U tests between the Locomotion variable and EACH morphology/ROM variable (17 variables total). Write the p value for each test next to your code with a #.
@@ -107,17 +110,32 @@ pri.dat
 wilcox.test(FemurHead ~ Locomotion, data = pri.dat) # p = <2.2e-16
 
 # Your turn:
-
+wilcox.test(NSA ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(Neck ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(L2 ~ Locomotion, data = pri.dat) # p = 5.079e-13
+wilcox.test(L4 ~ Locomotion, data = pri.dat) # p = 8.652e-11
+wilcox.test(FTA ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(PS ~ Locomotion, data = pri.dat) # p = 2.925e-13
+wilcox.test(PI ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(AS ~ Locomotion, data = pri.dat) # p = 3.74e-11
+wilcox.test(AI ~ Locomotion, data = pri.dat) # p = 1.036e-15
+wilcox.test(TotalArea ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(SUP ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(ANT ~ Locomotion, data = pri.dat) # p = 0.005501
+wilcox.test(AcetabDiameter ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(PelvicBreadth ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(Abduction ~ Locomotion, data = pri.dat) # p = <2.2e-16
+wilcox.test(AbductedKnee ~ Locomotion, data = pri.dat) # p = <2.2e-16
 ```
 
 # 5. From your hypothesis tests in #4.: For which morphology/ROM variables are suspensory and non-suspensory primates significantly different? In other words, for which morphology/ROM variables is the alternative hypothesis TRUE (p value is LESS THAN 0.05)? List below.
 ```{r}
-
+# Femur Head, NSA, Neck, L2, L4, FTA, PS, PI, AS, AI, Total Area, SUP, ANT, Acetabular Diameter, Pelvic Breadth, Abduction, Abducted Knee 
 ```
 
 # 6. What do your results mean in real life? What have we learned about differences among primates with different locomotion strategies? Interpret your results from above with words.
 ```{r}
-
+# For each given variable, there is a differnece between suspensory and nonsuspensory 
 ```
 
 
@@ -125,17 +143,31 @@ wilcox.test(FemurHead ~ Locomotion, data = pri.dat) # p = <2.2e-16
 # 7. Create side-by-side boxplots to compare the Abduction of all Suspensory and all Non-Suspensory primates (using the Locomotion variable).
 # Tip: Use the same format as you did for the wilcox.test() function!
 ```{r}
-
+boxplot(Abduction ~ Locomotion, data = pri.dat)
 ```
 
 # 8. Create side-by-side boxplots to compare the Abducted Knee Position of all Suspensory and all Non-Suspensory primates (using the Locomotion variable).
 ```{r}
-
+boxplot(AbductedKnee ~ Locomotion, data = pri.dat)
 ```
 
 # 9. Create side-by-side boxplots to compare each morphology variable of all Suspensory and all Non-Suspensory primates (using the Locomotion variable) that were significant in your Mann-Whitney U tests (question #5.).
 ```{r}
-
+boxplot(FemurHead ~ Locomotion, data = pri.dat)
+boxplot(NSA ~ Locomotion, data = pri.dat)
+boxplot(Neck ~ Locomotion, data = pri.dat)
+boxplot(L2 ~ Locomotion, data = pri.dat)
+boxplot(L4 ~ Locomotion, data = pri.dat)
+boxplot(FTA ~ Locomotion, data = pri.dat)
+boxplot(PS ~ Locomotion, data = pri.dat)
+boxplot(PI ~ Locomotion, data = pri.dat)
+boxplot(AS ~ Locomotion, data = pri.dat)
+boxplot(AI ~ Locomotion, data = pri.dat)
+boxplot(TotalArea ~ Locomotion, data = pri.dat)
+boxplot(SUP ~ Locomotion, data = pri.dat)
+boxplot(ANT ~ Locomotion, data = pri.dat)
+boxplot(AcetabDiameter ~ Locomotion, data = pri.dat)
+boxplot(PelvicBreadth ~ Locomotion, data = pri.dat)
 ```
 
 
