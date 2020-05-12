@@ -198,4 +198,3 @@ abline(lmFemurHead)
 
 # 11. You made it to the end! Ask me about the issues of *residuals* and *influential points* :) 
 
-

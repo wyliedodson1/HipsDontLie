@@ -1,0 +1,143 @@
+---
+title: "Primate Hypothesis Tests"
+author: "Lucrecia Aguilar"
+date: "5/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+## PURPOSE
+# Conducting *hypothesis (or significance) tests* between *suspensory* and *non-suspensory* locomotion groups. This will help us understand how morphology and range of motion (ROM) variables may differ among primates who have different locomotion strategies.
+
+
+## INSTRUCTIONS
+# *Hypothesis (or significance) testing* is used in statistics to determine the probability that a chosen hypothesis is true. Essentially, you test to see if your results or hypothesis are valid by figuring out how likely it is that you got your results by random chance. This is a form of *inferential statistics*.
+
+# Hypothesis testing follows four general steps:
+# 1. Specifiy the *null hypothesis*, H0, which is usually that there is no difference or relationship between groups. Essentially, if the null hypothesis is true, then any observed differences among groups occurred due to pure chance. Think of this as the default or neutral hypothesis.
+# 2. Specify the *alternative hypothesis*, Ha or H1, which is usually that there is some difference or relationship between groups that is due to some non-random cause. Usually, we want this to be true.
+# 3. Choose and use a *test statistic*; this will test whether your null or alternative hypothesis is true.
+# 4. From the test statistic, compute the *p value* (R does this for you!). If the p value is LESS THAN 0.05, you can ACCEPT the alternative hypothesis and REJECT the null hypothesis (yay!). If the p value is GREATER THAN 0.05, you CANNOT reject the null hypothesis because it might be true!
+# Note: 0.05 is know as the *alpha (or acceptable significance) value*. This number can change depending on the situation, but 0.05 is generally accepted across the sciences.
+
+# We will conduct hypothesis tests between suspensory and non-suspensory locotion groups for each morphology and range of motion (ROM) variable. This will tell us if there is or is not a difference between suspensory and non-suspensory primates for each variable.
+
+# Step 1: Specify the null hypothesis, H0.
+```{r}
+# H0: There is no difference between suspensory and non-suspensory primates for a given variable.
+```
+
+# Step 2: Specify the alternative hypothesis, H1.
+```{r}
+# H1: There is a difference between suspensory and non-suspensory primates for a given variable.
+```
+
+#Step 3: Choose and use a test statistic.
+# The most common test statistic is the *t test*. However, we will use the *Mann-Whitney U* (also called the Wilcoxon Rank Sum) as our test statistic because our data are likely not normally distributed (meaning that they do not follow a nice bell curve). This is called a non-parametric test.
+
+# To do this in R, we will use the *wilcox.test() function*, which follows this format:
+```{r}
+# wilcox.test(y ~ x, data = dataset)
+```
+# In this format:
+# y is a numeric variable; For us, y will be a morphology or ROM variable.
+# x is a binary factor variable; For us, x will be the Locomotion variable.
+# data argument is used to specify which dataset you want R to use; For us, we will use the pri.dat dataset.
+
+# Step 4: Find and interpret the p value.
+# From the wilcox.test() function output, find the p value (listed as "p-value", in the row that starts with "W ="). Is it less than or greater than 0.05?
+# R will also tell you if the alternative hypothesis is true or not at the end of the wilcox.test() function output.
+
+# In your group, you will conduct Mann-Whitney U hypothesis tests between the Locomotion variable and EACH morphology/ROM variable. Interpret the results to determine which variables are different for suspensory and non-suspensory primates.
+# Group 1 (Wylie, Sophie, Miranda)
+# Group 2 (Nyla, Haesu, Hanora)
+
+
+## REMINDERS
+# Properly label your code with # comments! 
+# SAVE YOUR WORK!
+# Look back at previous R Markdowns and DataCamp courses for help! And please ask for help when you need it!
+
+
+## WORKFLOW
+# 1. Import the full primate dataset from your GitHub folder (PrimateMorphROMData_Full.csv):
+```{r}
+pri.dat <- read.csv(file.choose())
+pri.dat
+```
+
+# 2. Explain the *null hypothesis*, H0, in your own words.
+```{r}
+#
+```
+
+# 3. Explain the *alternative hypothesis*, Ha or H1, in your own words.
+```{r}
+#
+```
+
+# 4. Use the wilcox.test() function to conduct Mann-Whitney U tests between the Locomotion variable and EACH morphology/ROM variable (17 variables total). Write the p value for each test next to your code with a #.
+```{r}
+#Example:
+wilcox.test(FemurHead ~ Locomotion, data = pri.dat) # p = <2.2e-16
+
+# Your turn:
+
+```
+
+# 5. From your hypothesis tests in #4.: For which morphology/ROM variables are suspensory and non-suspensory primates significantly different? In other words, for which morphology/ROM variables is the alternative hypothesis TRUE (p value is LESS THAN 0.05)? List below.
+```{r}
+
+```
+
+# 6. What do your results mean in real life? What have we learned about differences among primates with different locomotion strategies? Interpret your results from above with words.
+```{r}
+
+```
+
+
+## GRAPHICS
+# 7. Create side-by-side boxplots to compare the Abduction of all Suspensory and all Non-Suspensory primates (using the Locomotion variable).
+# Tip: Use the same format as you did for the wilcox.test() function!
+```{r}
+
+```
+
+# 8. Create side-by-side boxplots to compare the Abducted Knee Position of all Suspensory and all Non-Suspensory primates (using the Locomotion variable).
+```{r}
+
+```
+
+# 9. Create side-by-side boxplots to compare each morphology variable of all Suspensory and all Non-Suspensory primates (using the Locomotion variable) that were significant in your Mann-Whitney U tests (question #5.).
+```{r}
+
+```
+
+
+
+# CONGRATS!! You finished your last R Markdown of the year!!
